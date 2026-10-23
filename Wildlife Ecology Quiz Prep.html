@@ -1,0 +1,228 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Wildlife Ecology Quiz Prep</title>
+<style>
+:root{--bg:#f5f7f4;--cd:#fff;--tx:#1b2a22;--mu:#667a6f;--pr:#1f7a4d;--pl:#e3f2ea;--ok:#1f7a4d;--no:#c0392b;--bd:#d9e1da;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media(prefers-color-scheme:dark){:root{--bg:#111a15;--cd:#1a2520;--tx:#e6eee9;--mu:#98ada2;--pr:#4cc38a;--pl:#1f3a2c;--ok:#4cc38a;--no:#ff7a6b;--bd:#2b3a32;color-scheme:dark}}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+#app,nav{max-width:860px;margin:0 auto;padding:12px 14px}
+nav{display:flex;gap:6px;flex-wrap:wrap;position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);z-index:5}
+button,.ch{font:inherit;border:1px solid var(--bd);background:var(--cd);color:var(--tx);border-radius:10px;padding:8px 13px;cursor:pointer;margin:3px 3px 3px 0;display:inline-block}
+button.pr,.ch.on{background:var(--pr);color:#fff;border-color:var(--pr)}nav button.on{background:var(--pl);border-color:var(--pr)}
+.card{background:var(--cd);border:1px solid var(--bd);border-radius:14px;padding:16px;margin:10px 0}
+.g3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.md{cursor:pointer}.md:hover{border-color:var(--pr)}
+.mu{color:var(--mu);font-size:14px}h1{font-size:24px;margin:8px 0 0}h2{margin:8px 0}h3{margin:6px 0 12px;font-size:18px}h4{margin:14px 0 4px}
+.op{display:flex;gap:10px;align-items:center;border:1.5px solid var(--bd);border-radius:10px;padding:10px 12px;margin:7px 0;cursor:pointer}
+.op span{width:26px;height:26px;border-radius:50%;background:var(--pl);display:grid;place-items:center;font-size:13px;flex:none}
+.op.sel{border-color:var(--pr);background:var(--pl)}.op.ok{border-color:var(--ok);background:color-mix(in srgb,var(--ok) 18%,transparent)}.op.no{border-color:var(--no);background:color-mix(in srgb,var(--no) 18%,transparent)}
+.fb{padding:8px 12px;border-radius:8px;margin:8px 0;font-weight:600}.fb.ok,.ok-t{color:var(--ok)}.fb.no,.no-t{color:var(--no)}
+.bar{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;align-items:center}.tm{font-weight:700;font-size:18px;color:var(--pr)}
+.pal{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:8px}.pal i{font-style:normal;width:32px;height:32px;display:grid;place-items:center;border:1px solid var(--bd);border-radius:8px;cursor:pointer;font-size:13px}
+.pal i.an{background:var(--pl);border-color:var(--pr)}.pal i.fg{outline:2.5px solid #e6a100}.pal i.cur{background:var(--pr);color:#fff}
+.chips{display:flex;flex-wrap:wrap}label{display:block;margin:4px 0}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px}.tiles div{background:var(--pl);border-radius:12px;padding:10px;text-align:center}.tiles b{display:block;font-size:24px}
+.tw{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:14px}td,th{padding:6px 8px;border-bottom:1px solid var(--bd);text-align:left}
+.bb{background:var(--bd);border-radius:6px;height:10px;min-width:80px}.bb u{display:block;height:100%;background:var(--pr);border-radius:6px}
+.qi{border-bottom:1px solid var(--bd);padding:10px 0}
+</style></head><body>
+<nav id="nv"></nav><div id="app"></div>
+<script>
+const E={1:[
+"Ecology is the scientific study of ______ that determine the distribution and abundance of organisms. (Fill in the blanks)|statics|interactions|dynamics|habitat|1",
+"Carolus Linnaeus is considered the father of:|Biogeography|Modern taxonomy|Population ecology|Botanical geography|1",
+"“Enquiry into plants” is a book written by|Theophrastus|Linnaeus|Malthus|Humboldt|0",
+"Who amongst these is considered the father of Biogeography?|Theophrastus|Linnaeus|Malthus|Humboldt|3",
+"Genetic adaptation refers to:|High reproductive rate in one generation|Inheritable fitness|Physical strength of an individual|Short-term environmental comfort|1",
+"Thomas Robert Malthus influenced studies in:|Community ecology|Marine ecology|Population ecology|Behavioural ecology|2",
+"Which approach tests ecological ideas through experiments?|Theoretical approach|Field approach|Laboratory approach|Descriptive approach|2",
+"Which approach mainly depends on direct observation of organisms in natural surroundings?|Laboratory approach|Historical approach|Theoretical approach|Field approach|3",
+"In the Greek word root of Ecology, logos refers to|household|preservation|environment|study|3",
+"Charles Darwin is associated with:|The theory of ecosystem formation|The theory of taxonomy|The theory of botanical geography|The theory of evolution and natural selection|3"],
+2:[
+"Hierarchy emerges almost inevitably through a wide variety of evolutionary processes, for the simple reason that hierarchical structures are ____________ (Fill in the blank)|perfect|imperfect|stable|unstable|2",
+"Which level is formed when similar cells and their extracellular matrix from the same origin together perform a specific function?|Organ|Tissue|Organ system|Population|1",
+"“the diversity that exists within an ecosystem” is|alpha (α) biodiversity|beta (β) biodiversity|gamma (γ) biodiversity|delta (δ) biodiversity|0",
+"“groups of actually or potentially interbreeding natural populations, which are reproductively isolated from other such groups” is a definition of|cells|species|ecosystems|biomes|1",
+"The emergent principle can be stated as|Whole = sum of parts|Whole < sum of parts|Whole > sum of parts|None of these|2",
+"The smallest unit of life is the:|Cell|Tissue|Organ|Organism|0",
+"The diversity of genetic information present at the levels of phyla, families, species, populations and individuals is called:|Ecosystem biodiversity|Species evenness|Genetic biodiversity|Species richness|2",
+"The value of leaving use and non-use values for future generations is called:|Altruistic value|Option value|Existence value|Bequest value|3",
+"Value arising even though a resource is not being used is called:|Direct value|Indirect value|Non-use value|Productive value|2",
+"Species richness refers to:|The distribution of individuals among different species|The genetic variation within one population|The number of ecosystems in a biome|The number of species present|3"],
+3:[
+"I observe a bird take a tick out of another bird’s head and eat it. In the social context, this behaviour would be called|tick hunting|auto grooming|allo grooming|foraging|2",
+"Leech is an example of|endoparasite|herbivore predator|parasitoid|ectoparasite|3",
+"An ecological interaction in which both participating organisms are harmed is called|mutualism|commensalism|competition|neutralism|2",
+"Interspecific interaction occurs between|members of different species|members of the same species|two organisms that are both benefited|two organisms that remain unaffected|0",
+"The distance maintained by nesting penguins to avoid pecking from neighbours is related to|herbivory|parasitoid pressure|prey switching|territorial spacing|3",
+"A parasite that lives inside the body of its host is called|ectoparasite|endoparasite|predator|commensal|1",
+"Birds on giraffe are an example of|colony|commensalism|protocooperation|allelopathy|2",
+"Competition in which organisms directly consume a limited resource so that less remains for others is called|interference competition|exploitative competition|apparent competition|neutral competition|1",
+"Interference competition is also known as|apparent competition|contest competition|niche competition|exploitative competition|1",
+"The scientific study of animal behaviour is called|behaviourism|ecology|ethology|prey-predator dynamics|2"],
+4:[
+"Consider the food chain: Grass → Grasshopper → Frog → Snake → Hawk. In this food chain,|hawk is producer|hawk is consumer and carnivore|hawk is consumer and herbivore|hawk is decomposer|1",
+"Trees → Birds → Parasites → Hyperparasites represents|upright pyramid of numbers|inverted pyramid of numbers|spindle pyramid of numbers|dumb-bell pyramid of numbers|1",
+"Glacial lakes are typical examples of|eutrophic lakes|hypereutrophic lakes|oligotrophic lakes|mesotrophic lakes|2",
+"In a grazing food chain, the first trophic level after producers is generally occupied by:|Carnivores|Decomposers|Detritivores|Herbivores|3",
+"Which statement correctly defines net primary production?|Energy intercepted by producers from the Sun|Total energy lost during transfer between trophic levels|Gross primary production minus energy lost through respiration per unit time|Energy stored only in herbivore biomass|2",
+"Which statement correctly defines gross primary production?|Energy fixed through photosynthesis per unit time|Energy lost by organisms through respiration per unit time|Total number of producers in an ecosystem|Organic matter consumed by herbivores per unit time|0",
+"Which chain best represents a detritus food chain?|Fallen leaves → detritivores → small fish → large fish|Grass → chital → tiger|Rat → flea → parasitic protozoa|Phytoplankton → zooplankton → fish → sea lion|0",
+"Consider the food chain: Grass → Grasshopper → Frog → Snake → Hawk. As we move up the food chain,|available energy decreases|available energy increases|available energy remains same|available energy is zero everywhere|0",
+"Which statement correctly describes a decomposer?|It only feeds on living plants|It consumes only primary consumers|It converts dead material into soil and recycles nutrients|It always occupies the quaternary trophic level|2",
+"Which description best defines a heterotroph?|An organism that converts sunlight directly into inorganic nutrients|An organism that cannot produce its own food and depends on organic carbon from other sources|An organism that uses chemical reactions to manufacture minerals|An organism that occupies only the first trophic level|1"],
+5:[
+"In population dynamics, which pair represents additions to an existing population?|Mortality and emigration|Natality and immigration|Mortality and natality|Immigration and emigration|1",
+"Cover board surveys are typically used for sampling|herpetofauna|fishes|large mammals|carnivores|0",
+"Pan traps are used for sampling|bees|butterflies|non-pollinator insects|pollinator insects|3",
+"A sampling procedure such that each possible combination of sampling units out of the population has the same chance of being selected is referred to as|Simple random sampling|Systematic sampling|Stratified sampling|Multistage sampling|0",
+"The minimum replacement level fertility for a population to grow should be greater than|1|2|3|4|1",
+"A list of sampling units is called a:|Sample|Sampling intensity|Sampling frame|Stratum|2",
+"In capture-recapture method, the first stage involves:|Counting faecal pellets|Removing trapped animals permanently|Estimating bait consumption|Capturing, marking and releasing animals|3",
+"The logistic growth equation, when plotted, appears|I shaped|J shaped|S shaped|O shaped|2",
+"______ employs a simple rule of selecting every kth unit starting with a number chosen at random from 1 to k as the random start.|Simple random sampling|Systematic sampling|Stratified sampling|Multistage sampling|1",
+"Which of these is not a measure of absolute population density?|total count|pelt count|capture-recapture method|removal method|1"],
+6:[
+"A guild is a group of species that|Occupy only one climax community|Have identical population size|Utilise resources in a similar way|Are confined to saline habitats|2",
+"The climax near Tindni village is being controlled by disturbance by cattle. This is an example of|climatic climax|edaphic climax|disclimax|catastrophic climax|2",
+"Species abundance may be expressed in terms of|Climate, soil and slope|Number of individuals, biomass or cover|Hydrosere, xerosere and halosere|Resistance, resilience and stability|1",
+"Resistance refers to the ability of a community to|Recover quickly after disturbance|Persist without change in the face of disturbance|Increase the number of pioneer species|Replace one seral stage with another|1",
+"Importance value can be written as|Relative density + Relative frequency X Relative dominance|Relative density X Relative frequency + Relative dominance|Relative density + Relative frequency + Relative dominance|Relative density X Relative frequency X Relative dominance|2",
+"Secondary succession refers to succession that occurs|On newly exposed rock or sand surfaces|In a saline body such as a marsh|After severe disturbance or removal of a pre-existing community|Only when climate controls the final community|2",
+"Lithosere is an example of|hydrosere|xerosere|psammosere|halosere|1",
+"A transition area where two communities meet and integrate is called|Habitat|Niche|Ecotone|Sere|2",
+"Which of these is correct?|Fundamental niche > Realised niche|Fundamental niche = Realised niche|Fundamental niche < Realised niche|a or b|0",
+"Species richness refers to|Number of species|Number of individuals of one species|Biomass of the dominant species|Basal area of all trees|0"],
+7:[
+"In an estuary, species may use areas of|high, intermediate, and low salinity|only high temperature and high fertility|only alpine wind and poor soil|only forest canopy and grassland patches|0",
+"The movement of individuals away from their place of birth or hatching or seed production into a new habitat or area to survive and reproduce is called|translocation|migration|dispersal|drifting|2",
+"Transplantation experiments are used to find|potential range|effective range|actual range|economic range|0",
+"Pneumatophores are roots that|move downward to store excess salts|spread into sand dunes to stop wind erosion|grow upward from the ground to obtain air|become thorns to reduce transpiration|2",
+"At night, cooler and denser air from upper hill areas flows down towards the valley. This wind pattern is called|valley breeze|hill wind|ocean breeze|estuary current|1",
+"Flamingos in the Rann of Kutch are associated with water bodies because they need|high wind speeds and snow-covered slopes|food organisms in water and safe breeding conditions|dry deciduous leaves for summer feeding|tall coniferous trees for nesting|1",
+"Estuaries are specialized habitats because they contain|only freshwater throughout the year|only saline water throughout the year|only dry land and thorny shrubs|a meeting zone of freshwater and saline water|3",
+"The movement of lions across the Gir landscape is an example of|diffusion|secular dispersal|jump dispersal|drifting|0",
+"Mangroves are adapted to areas that experience|low salinity and permanent dryness|snow accumulation and alpine winds|deep desert sand with no water movement|high salinity and partial or complete inundation|3",
+"Scarcity of food is a|chemical factor|demographic factor|push factor|pull factor|2"],
+8:[
+"Which of these correctly represents the process of habitat fragmentation and loss?|Original forest → Dissection → Perforation → Fragmentation → Attrition|Original forest → Dissection → Attrition → Fragmentation → Perforation|Original forest → Dissection → Perforation → Attrition → Fragmentation|Original forest → Dissection → Fragmentation → Perforation → Attrition|0",
+"Habitat degradation means|complete removal of all organisms from an area|legal declaration of a protected area|breaking a forest into administrative zones|reduction in habitat quality for a given species|3",
+"When area is reduced by 90% and z is taken as 0.30, species richness approximately becomes|one-tenth of the original|half of the original|double the original|unchanged|1",
+"Breaking a natural landscape into small isolated parcels within human-dominated land is called|habitat restoration|habitat fragmentation|ex-situ preservation|seed dormancy|1",
+"We prefer those areas for the creation of a conservation reserve where the level of threat is|very high|medium|very low|non-existent|1",
+"A very small population moves towards extinction mainly because of Allee effect, chance deaths, and related small-population problems. This is best described as|habitat displacement|small population paradigm|reserve design|biodiversity repository|1",
+"A population becomes smaller because its habitat is shrinking, competitors are increasing, and poaching is removing individuals. This situation is best studied under|declining population paradigm|small population paradigm|island biogeography model|cryopreservation strategy|0",
+"Which of these is a deterministic factor?|environmental variation|forest fire|death rate|diseases|2",
+"Roads, railways, dams, and similar structures contribute to fragmentation because they may act as|mortality sources and physical barriers|seed collection centres|botanical repositories|cryopreservation facilities|0",
+"The acronym HIPPO does not include|habitat loss|invasive species|pollination|pollution|2"],
+9:[
+"A proposed epoch marked by significant human impact on Earth’s geology and ecosystems is called?|Holocene|Anthropocene|Pleistocene|Carboniferous|1",
+"According to Malthusian model,|Population grows in geometric progression, food supply increases in arithmetic progression|Population grows in geometric progression, food supply increases in geometric progression|Population grows in arithmetic progression, food supply increases in arithmetic progression|Population grows in arithmetic progression, food supply increases in geometric progression|0",
+"Which of these is not a pillar of sustainability?|environmental sustainability|economic sustainability|trans-boundary sustainability|social sustainability|2",
+"The demographic transition sees a society move from|high birth rate, low death rate to low birth rate, low death rate|low birth rate, high death rate to low birth rate, low death rate|high birth rate, high death rate to low birth rate, low death rate|high birth rate, high death rate to low birth rate, high death rate|2",
+"Which of the following is listed as a theme of clean technology?|Water purification|Predator-prey control|Migration of birds|Food chain length|0",
+"When stalactites and stalagmites join together, they form a?|Lagoon|Crevice|Terrace|Column|3",
+"Which of these is a preventive check according to Malthus?|foresight|vice|misery|flood|0",
+"Which of these is a pillar of sustainability|social sustainability|industrial sustainability|agricultural sustainability|trans-boundary sustainability|0",
+"In cave formations, the deposits growing downward from the roof are called?|Stalagmites|Columns|Stalactites|Sediment bars|2",
+"Industrial processes such as the Haber process affect which biogeochemical cycle?|Carbon cycle only|Water cycle only|Nitrogen cycle|Phosphorus cycle only|2"],
+10:[
+"A community already affected by disease, weeds, pollutants, or livestock pressure is best described as which type of community?|Pristine community|Climax community|Resistant community|Disturbed community|3",
+"When an organism absorbs a toxic substance into its tissues faster than it loses it, the process is called:|Biomagnification|Bioavailability|Bioaccumulation|Biodegradation|2",
+"What percentage of marine plastic debris is stated to sink to the ocean bottom?|15%|30%|50%|70%|3",
+"Hydrocarbons derived directly from mineral oils are called:|Pyrogenic hydrocarbons|Biogenic hydrocarbons|Aromatic hydrocarbons|Petrogenic hydrocarbons|3",
+"“Any changes in natural or human systems that inadvertently increase vulnerability to climatic stimuli; an adaptation that does not succeed in reducing vulnerability but increases it instead” is a definition for|adaptation|mitigation|maladaptation|malmitigation|2",
+"A normal ecological community faces one large and infrequent disturbance and then returns close to its earlier condition. Which outcome is best represented?|Long-term alteration|Recovery|Bioaccumulation|Habitat displacement|1",
+"Macrodebris in the context of plastic debris has fragments of size|> 20 mm|5 - 20 mm|< 5 mm|< 1 mm|0",
+"The Deepwater Horizon incident is classified by origin as which kind of oil spill?|Natural|Accidental|Intentional|Biogenic|1",
+"Harmful effects caused by a single or short-term exposure are called:|Chronic toxicity|Acute toxicity|Sub-lethal exposure|Bioavailability|1",
+"Mesodebris in the context of plastic debris has fragments of size|> 20 mm|5 - 20 mm|< 5 mm|< 1 mm|1"],
+11:[
+"Which term refers to the total weight of organisms removed by fishing?|Natural mortality|Recruitment|Growth|Yield to fishery|3",
+"Ludwig’s ratchet predicts|decreasing harvesting rate|constant harvesting rate|increasing harvesting rate|fluctuating harvesting rate|2",
+"A deciduous forest in Madhya Pradesh was converted to a mine. After the mining operations were over, the pits were filled up with water and a lake was created. It is now visited by several migratory birds. This is an example of|recovery|restoration|enhancement|replacement|3",
+"Which of these is correct?|The maximum sustainable yield is near the beginning of the sigmoidal curve.|The maximum sustainable yield is near the mid-point of the sigmoidal curve.|The maximum sustainable yield is near the end of the sigmoidal curve.|None of these.|1",
+"Which of these is correct?|R + G = M + F|R + M = G + F|R + F = M + G|R + G + M + F = 0|0",
+"In a logistic growth curve, growth is slow near carrying capacity mainly because the population is:|very small|newly introduced|close to the environmental limit|free from competition|2",
+"What does absolute abundance measure?|Relative catch per unit effort|Actual number of individuals present|Percentage change in population|Estimated trend in sightings|1",
+"A root zone treatment plant is an example of|phytoremediation|biological control|biomagnification|bioaccumulation|0",
+"What is a major risk of introducing predators for pest control?|The pest always becomes extinct immediately|The predator cannot reproduce under any condition|The predator reduces rainfall|The introduced predator may itself become a pest|3",
+"Ecotoxicology studies toxic chemicals mainly at which broader levels?|Individual atoms and molecules only|Population, community, ecosystem, and biosphere levels|Market demand and harvesting cost only|Crop yield and storage levels only|1"],
+0:["“The rate of any biological process is limited by that factor in least amount relative to requirement, so there is a single limiting factor.” This is the statement for|Liebig’s law of the minimum|Liebig’s law of the maximum|Shelford’s law of tolerance|Shelford’s law of intolerance|0","1.1","2.2","3.3","4.4","5.5","6.6","7.7","8.8","9.9"],
+12:["9.9","8.8","3.3","1.1","10.10","2.2","6.6",
+"A group of organs working together to perform one or more functions is called?|Tissue|Organ|Organism|Organ system|3",
+"After a forest fire, an incompletely destroyed forest develops through herbaceous, shrub and woodland stages toward a stable stage. This is best described as?|Secondary succession|Climatic climax|Bioaccumulation|Species-area effect|0",
+"If organisms already present in an area change the soil conditions and thereby drive further community change, the succession is?|Allogenic succession|Autogenic succession|Catastrophic succession|Seasonal succession|1"]};
+const esc=t=>t.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+const mk=(r,w,n)=>{const p=r.split("|");return{id:w+"."+n,w,n,q:esc(p[0]),o:p.slice(1,5).map(esc),a:+p[5],m:n%2?1:2}};
+const B={};for(let w=1;w<=11;w++)B[w]=E[w].map((r,i)=>mk(r,w,i+1));
+for(const w of [0,12])B[w]=E[w].map((r,i)=>{if(/^\d+\.\d+$/.test(r)){const[a,b]=r.split(".");return{...B[a][b-1],w}}return mk(r,w,i+1)});
+const POOL=[],seen={};[1,2,3,4,5,6,7,8,9,10,11,0,12].forEach(w=>B[w].forEach(q=>{if(!seen[q.id]){seen[q.id]=1;POOL.push(q)}}));
+const BY={};POOL.forEach(q=>BY[q.id]=q);
+const typ=q=>/Fill/.test(q)?"Fill in the blank":/called|defin|refers|known as|described|is the statement/i.test(q)?"Definition / terminology":/^(Which|Who)|\?$/.test(q)?"Identification":"Concept & application";
+let DB={bm:{},hist:[],tm:{},track:true,life:{att:0,cor:0},last:null};
+try{Object.assign(DB,JSON.parse(localStorage.getItem("wq")||"{}"))}catch(e){}
+const sv=()=>{try{localStorage.setItem("wq",JSON.stringify(DB))}catch(e){}};
+const $=s=>document.querySelector(s),app=$("#app");
+let S=null,iv=null,C={},cur="home";
+const shuf=a=>{a=[...a];for(let i=a.length;i>1;){const j=Math.random()*i--|0;[a[i],a[j]]=[a[j],a[i]]}return a};
+const fm=s=>{s=Math.max(0,s|0);return(s/60|0)+":"+String(s%60).padStart(2,"0")};
+const fh=s=>s>=3600?(s/3600|0)+"h "+((s%3600)/60|0)+"m":fm(s);
+function nvr(){$("#nv").innerHTML=[["home","🏠 Home"],["dash","📊 Dashboard"],["bm","★ Review list"],["guide","📘 Solution guide"]].map(x=>`<button class="${cur==x[0]?"on":""}" onclick="go('${x[0]}')">${x[1]}</button>`).join("")}
+function go(v){if(S&&!S.done&&!confirm("Leave this quiz? Progress will be lost."))return;S=null;clearInterval(iv);cur=v;nvr();({home,dash,bm,guide})[v]()}
+function home(){app.innerHTML=`<h1>🌿 Wildlife Ecology Quiz Prep</h1><p class=mu>Weeks 0–12 · ${POOL.length} unique questions</p><div class=g3>
+<div class="card md" onclick="setup('study')"><h3>📖 Study Mode</h3><p>Learn with instant answers. Pick a week, optional 10-minute timer, shuffle questions and options.</p></div>
+<div class="card md" onclick="setup('test')"><h3>📝 Test Mode</h3><p>Evaluate your performance. Combine any weeks; results shown at the end.</p></div>
+<div class="card md" onclick="setup('exam')"><h3>🎓 Exam Mode</h3><p>50 questions from all weeks (25 × 1 mark + 25 × 2 marks) in 60 minutes.</p></div></div>
+<div class=card><h4 style="margin-top:0">Weekly practice</h4><p class=mu>Jump straight into a week:</p><div class=chips>${[...Array(13).keys()].map(w=>`<span class=ch onclick="setup('study');C.sel=[${w}];rs()">Week ${w}</span>`).join("")}</div></div>`}
+function setup(m){C={m,sel:m=="study"?[1]:[],t:0,sq:0,so:0,fb:1};rs()}
+function tg(w){if(C.m=="study")C.sel=[w];else C.sel=C.sel.includes(w)?C.sel.filter(x=>x!=w):[...C.sel,w];rs()}
+function rs(){const m=C.m,ex=m=="exam",ch=(on,f,t)=>`<span class="ch${on?" on":""}" onclick="${f}">${t}</span>`;
+app.innerHTML=`<h2>${{study:"📖 Study Mode",test:"📝 Test Mode",exam:"🎓 Exam Mode"}[m]}</h2><div class=card>`+(ex?`<p>50 questions drawn from all weeks: 25 × 1 mark + 25 × 2 marks = 75 marks. Time limit: <b>60 minutes</b>. Questions are shown exactly as written in the source.</p>`:
+`<h4 style="margin-top:0">${m=="study"?"Choose a week":"Choose one or more weeks"}</h4><div class=chips>${[...Array(13).keys()].map(w=>ch(C.sel.includes(w),`tg(${w})`,"Week "+w)).join("")}</div>${m=="test"?`<button onclick="C.sel=[...Array(13).keys()];rs()">Select all</button>`:""}<h4>Timer</h4>${[[0,"No timer"],[10,"10 min"],[20,"20 min"]].map(x=>ch(C.t==x[0],`C.t=${x[0]};rs()`,x[1])).join("")}`)+
+`<h4>Shuffle</h4><label><input type=checkbox ${C.sq?"checked":""} onchange="C.sq=this.checked?1:0"> Shuffle questions</label><label><input type=checkbox ${C.so?"checked":""} onchange="C.so=this.checked?1:0"> Shuffle options within each question</label>`+
+(m=="study"?`<h4>Solutions</h4>${ch(C.fb,"C.fb=1;rs()","Instant feedback")}${ch(!C.fb,"C.fb=0;rs()","Evaluate at the end")}`:"")+`<p><button class=pr onclick=begin()>Start ▶</button></p></div>`}
+function begin(){let qs,lim=C.t*60,m=C.m;
+if(m=="exam"){lim=3600;qs=[...shuf(POOL.filter(q=>q.m==1)).slice(0,25),...shuf(POOL.filter(q=>q.m==2)).slice(0,25)];qs=C.sq?shuf(qs):qs.sort((a,b)=>a.w-b.w||a.n-b.n)}
+else{if(!C.sel.length)return alert("Pick at least one week.");const sn={};qs=[...C.sel].sort((a,b)=>a-b).flatMap(w=>B[w]).filter(q=>!sn[q.id]&&(sn[q.id]=1));if(C.sq)qs=shuf(qs)}
+launch(m,qs,{inst:m=="study"&&C.fb,lim,so:C.so})}
+function launch(m,qs,o){S={m,qs,ord:{},ans:{},fl:{},i:0,inst:o.inst,lim:o.lim||0,left:o.lim||0,tw:{},t0:Date.now(),done:false};qs.forEach(q=>S.ord[q.id]=o.so?shuf([0,1,2,3]):[0,1,2,3]);clearInterval(iv);iv=setInterval(tick,1000);rq()}
+function utm(){const e=$("#tm");if(e&&S)e.textContent="⏱ "+(S.lim?fm(S.left):fm((Date.now()-S.t0)/1000))}
+function tick(){const s=S;if(!s||s.done)return;const q=s.qs[s.i];s.tw[q.w]=(s.tw[q.w]||0)+1;if(s.lim&&--s.left<=0){fin();return}utm()}
+const nf=o=>Object.keys(o).filter(k=>o[k]).length;
+function rq(){const s=S,q=s.qs[s.i],a=s.ans[q.id],sh=s.inst&&a!=null;
+const op=s.ord[q.id].map((k,j)=>{let c="op";if(a==k)c+=" sel";if(sh){if(k==q.a)c+=" ok";else if(a==k)c+=" no"}return`<div class="${c}" onclick="pick(${k})"><span>${"ABCD"[j]}</span><div>${q.o[k]}</div></div>`}).join("");
+app.innerHTML=`<div class=bar><b>${s.m.toUpperCase()}</b><span id=tm class=tm></span><span class=mu>${nf(s.ans)}/${s.qs.length} answered · ${nf(s.fl)} marked</span></div>
+<div class=card><div class=mu>Q${s.i+1} of ${s.qs.length} · Week ${q.w} · ${q.m} mark${q.m>1?"s":""}</div><h3>${q.q}</h3>${op}${sh?`<div class="fb ${a==q.a?"ok":"no"}">${a==q.a?"✓ Correct!":"✗ Incorrect."} Answer: ${q.o[q.a]}</div>`:""}
+<div><button onclick="mv(-1)">← Prev</button><button onclick="mv(1)">Next →</button><button onclick="flg()">${s.fl[q.id]?"⚑ Unmark review":"⚐ Mark for review"}</button><button onclick="bmk('${q.id}')">${DB.bm[q.id]?"★ Bookmarked":"☆ Bookmark"}</button></div></div>
+<div class=card><div class=pal>${s.qs.map((x,j)=>`<i class="${j==s.i?"cur ":""}${s.ans[x.id]!=null?"an ":""}${s.fl[x.id]?"fg":""}" onclick="s_j(${j})">${j+1}</i>`).join("")}</div><button class=pr onclick="sub()">Submit &amp; see results</button></div>`;utm()}
+function pick(k){const s=S,q=s.qs[s.i];if(s.inst&&s.ans[q.id]!=null)return;if(!s.inst&&s.ans[q.id]==k)delete s.ans[q.id];else s.ans[q.id]=k;rq()}
+const mv=d=>{S.i=Math.min(S.qs.length-1,Math.max(0,S.i+d));rq()},s_j=j=>{S.i=j;rq()};
+const flg=()=>{const id=S.qs[S.i].id;S.fl[id]=!S.fl[id];rq()};
+function bmk(id){DB.bm[id]?delete DB.bm[id]:DB.bm[id]=1;sv();S&&!S.done?rq():cur=="bm"?bm():S&&res()}
+function sub(){const u=S.qs.length-nf(S.ans);if(confirm(u?`${u} question(s) unanswered. Submit anyway?`:"Submit your answers?"))fin()}
+function fin(){const s=S;if(s.done)return;s.done=true;clearInterval(iv);let sc=0,tot=0,att=0,cor=0;const bw={},bt={};
+s.qs.forEach(q=>{const a=s.ans[q.id],ok=a==q.a,t=typ(q.q);tot+=q.m;if(a!=null)att++;if(ok){cor++;sc+=q.m}
+[[bw,q.w],[bt,t]].forEach(([o,k])=>{const v=o[k]=o[k]||{n:0,att:0,cor:0,mk:0,mt:0};v.n++;v.mt+=q.m;if(a!=null)v.att++;if(ok){v.cor++;v.mk+=q.m}})});
+const n=s.qs.length,fl=nf(s.fl);s.res={sc,tot,att,cor,fl,un:n-att,n,bw,bt};
+DB.last={att,fl,un:n-att,n,m:s.m,d:new Date().toLocaleString()};DB.life.att+=att;DB.life.cor+=cor;
+DB.hist.unshift({d:DB.last.d,m:s.m,sc,tot,pct:Math.round(sc/tot*100)});DB.hist=DB.hist.slice(0,15);
+if(DB.track)for(const w in s.tw)DB.tm[w]=(DB.tm[w]||0)+s.tw[w];sv();res()}
+function res(){const s=S,r=s.res,p=Math.round(r.sc/r.tot*100);
+const tb=(o,l,sort)=>`<div class=tw><table><tr><th>${l}</th><th>Correct</th><th>Attempted</th><th>Marks</th><th>Accuracy</th></tr>${Object.keys(o).sort(sort).map(k=>{const v=o[k];return`<tr><td>${l=="Week"?"Week "+k:k}</td><td>${v.cor}/${v.n}</td><td>${v.att}</td><td>${v.mk}/${v.mt}</td><td><div class=bb><u style="width:${v.cor/v.n*100}%"></u></div></td></tr>`}).join("")}</table></div>`;
+const wrong=s.qs.filter(q=>s.ans[q.id]!=q.a);
+app.innerHTML=`<h2>Results · ${s.m.toUpperCase()}</h2><div class=card><div class=tiles><div><b>${r.sc}/${r.tot}</b>Marks (${p}%)</div><div><b class=ok-t>${r.cor}</b>Correct</div><div><b class=no-t>${r.att-r.cor}</b>Wrong</div><div><b>${r.un}</b>Unanswered</div><div><b>${r.fl}</b>Marked for review</div><div><b>${fm((Date.now()-s.t0)/1000)}</b>Time</div></div></div>
+<div class=card><h3>Performance by week</h3>${tb(r.bw,"Week",(a,b)=>a-b)}<h3>Performance by question type</h3>${tb(r.bt,"Question type",(a,b)=>a<b?-1:1)}</div>
+<div class=card><button class=pr ${wrong.length?"":"disabled"} onclick="launch('study',BYL(${JSON.stringify(wrong.map(q=>q.id))}),{inst:1})">Practise ${wrong.length} missed/unanswered</button><button onclick="go('home')">Home</button></div>
+<div class=card><h3>Answer review</h3>${s.qs.map((q,j)=>{const a=s.ans[q.id];return`<div class=qi><div class=mu>Q${j+1} · Week ${q.w} · ${q.m} mark${q.m>1?"s":""} ${a==null?"· <b>Unanswered</b>":a==q.a?'· <b class=ok-t>✓ Correct</b>':'· <b class=no-t>✗ Wrong</b>'}${s.fl[q.id]?" · ⚑ marked":""}</div><div>${q.q}</div>${a!=null&&a!=q.a?`<div class=no-t>Your answer: ${q.o[a]}</div>`:""}<div class=ok-t>Correct: ${q.o[q.a]}</div><button onclick="bmk('${q.id}')">${DB.bm[q.id]?"★ Bookmarked":"☆ Bookmark"}</button></div>`}).join("")}</div>`}
+const BYL=ids=>ids.map(i=>BY[i]);
+function dash(){const l=DB.last,tw=[...Array(13).keys()];
+app.innerHTML=`<h2>📊 Dashboard</h2><div class=card><h4 style="margin-top:0">Last session ${l?`(${l.m}, ${l.d})`:""}</h4>${l?`<div class=tiles><div><b>${l.att}</b>Attempted</div><div><b>${l.fl}</b>Marked for review</div><div><b>${l.un}</b>Unanswered</div><div><b>${l.n}</b>Total questions</div></div>`:`<p class=mu>No sessions yet — start a quiz!</p>`}</div>
+<div class=card><div class=tiles><div><b>${DB.life.att}</b>Total attempted</div><div><b>${DB.life.att?Math.round(DB.life.cor/DB.life.att*100):0}%</b>Overall accuracy</div><div><b>${Object.keys(DB.bm).length}</b>Bookmarked</div></div></div>
+<div class=card><h3>⏱ Time spent per week</h3><label><input type=checkbox ${DB.track?"checked":""} onchange="DB.track=this.checked;sv()"> Track time per week (optional)</label><div class=tw><table><tr><th>Week</th><th>Time</th></tr>${tw.map(w=>`<tr><td>Week ${w}</td><td>${fh(DB.tm[w]||0)}</td></tr>`).join("")}</table></div></div>
+<div class=card><h3>Recent sessions</h3>${DB.hist.length?`<div class=tw><table><tr><th>Date</th><th>Mode</th><th>Score</th></tr>${DB.hist.map(h=>`<tr><td>${h.d}</td><td>${h.m}</td><td>${h.sc}/${h.tot} (${h.pct}%)</td></tr>`).join("")}</table></div>`:"<p class=mu>Nothing yet.</p>"}<button onclick="if(confirm('Reset all stats and time?')){DB.hist=[];DB.tm={};DB.life={att:0,cor:0};DB.last=null;sv();dash()}">Reset stats</button></div>`}
+function bm(){const ids=Object.keys(DB.bm).filter(i=>BY[i]);
+app.innerHTML=`<h2>★ Review list</h2><p class=mu>Difficult questions you bookmarked, separate from weekly quizzes.</p><div class=card>${ids.length?`<button class=pr onclick="launch('study',BYL(${JSON.stringify(ids)}),{inst:1})">Practise all ${ids.length}</button>`+ids.map(i=>{const q=BY[i];return`<div class=qi><div class=mu>Week ${q.w} · Q${q.n}</div><div>${q.q}</div><div class=ok-t>Answer: ${q.o[q.a]}</div><button onclick="bmk('${i}')">Remove</button></div>`}).join(""):`<p>No bookmarks yet. Tap ☆ Bookmark during a quiz or in results.</p>`}</div>`}
+function guide(w){w=w==null||typeof w!="number"?1:w;
+app.innerHTML=`<h2>📘 Weekly solution guide</h2><div class=chips>${[...Array(13).keys()].map(x=>`<span class="ch${x==w?" on":""}" onclick="guide(${x})">Week ${x}</span>`).join("")}</div><div class=card>${B[w].map((q,j)=>`<div class=qi><b>${j+1}.</b> ${q.q}${q.o.map((o,k)=>`<div class="${k==q.a?"ok-t":"mu"}">${"abcd"[k]}) ${o}${k==q.a?" ✓":""}</div>`).join("")}</div>`).join("")}</div>`}
+nvr();home();
+</script></body></html>
