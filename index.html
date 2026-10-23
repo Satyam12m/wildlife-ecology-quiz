@@ -188,11 +188,12 @@ launch(m,qs,{inst:m=="study"&&C.fb,lim,so:C.so})}
 function launch(m,qs,o){S={m,qs,ord:{},ans:{},fl:{},i:0,inst:o.inst,lim:o.lim||0,left:o.lim||0,tw:{},t0:Date.now(),done:false};qs.forEach(q=>S.ord[q.id]=o.so?shuf([0,1,2,3]):[0,1,2,3]);clearInterval(iv);iv=setInterval(tick,1000);rq()}
 function utm(){const e=$("#tm");if(e&&S)e.textContent="⏱ "+(S.lim?fm(S.left):fm((Date.now()-S.t0)/1000))}
 function tick(){const s=S;if(!s||s.done)return;const q=s.qs[s.i];s.tw[q.w]=(s.tw[q.w]||0)+1;if(s.lim&&--s.left<=0){fin();return}utm()}
+const MK=q=>S&&S.m=="exam"?q.m:1;
 const nf=o=>Object.keys(o).filter(k=>o[k]).length;
 function rq(){const s=S,q=s.qs[s.i],a=s.ans[q.id],sh=s.inst&&a!=null;
 const op=s.ord[q.id].map((k,j)=>{let c="op";if(a==k)c+=" sel";if(sh){if(k==q.a)c+=" ok";else if(a==k)c+=" no"}return`<div class="${c}" onclick="pick(${k})"><span>${"ABCD"[j]}</span><div>${q.o[k]}</div></div>`}).join("");
 app.innerHTML=`<div class=bar><b>${s.m.toUpperCase()}</b><span id=tm class=tm></span><span class=mu>${nf(s.ans)}/${s.qs.length} answered · ${nf(s.fl)} marked</span></div>
-<div class=card><div class=mu>Q${s.i+1} of ${s.qs.length} · Week ${q.w} · ${q.m} mark${q.m>1?"s":""}</div><h3>${q.q}</h3>${op}${sh?`<div class="fb ${a==q.a?"ok":"no"}">${a==q.a?"✓ Correct!":"✗ Incorrect."} Answer: ${q.o[q.a]}</div>`:""}
+<div class=card><div class=mu>Q${s.i+1} of ${s.qs.length} · ${s.m=="study"?"Week "+q.w+" · ":""}${MK(q)} mark${MK(q)>1?"s":""}</div><h3>${q.q}</h3>${op}${sh?`<div class="fb ${a==q.a?"ok":"no"}">${a==q.a?"✓ Correct!":"✗ Incorrect."} Answer: ${q.o[q.a]}</div>`:""}
 <div><button onclick="mv(-1)">← Prev</button><button onclick="mv(1)">Next →</button><button onclick="flg()">${s.fl[q.id]?"⚑ Unmark review":"⚐ Mark for review"}</button><button onclick="bmk('${q.id}')">${DB.bm[q.id]?"★ Bookmarked":"☆ Bookmark"}</button></div></div>
 <div class=card><div class=pal>${s.qs.map((x,j)=>`<i class="${j==s.i?"cur ":""}${s.ans[x.id]!=null?"an ":""}${s.fl[x.id]?"fg":""}" onclick="s_j(${j})">${j+1}</i>`).join("")}</div><button class=pr onclick="sub()">Submit &amp; see results</button></div>`;utm()}
 function pick(k){const s=S,q=s.qs[s.i];if(s.inst&&s.ans[q.id]!=null)return;if(!s.inst&&s.ans[q.id]==k)delete s.ans[q.id];else s.ans[q.id]=k;rq()}
@@ -201,8 +202,8 @@ const flg=()=>{const id=S.qs[S.i].id;S.fl[id]=!S.fl[id];rq()};
 function bmk(id){DB.bm[id]?delete DB.bm[id]:DB.bm[id]=1;sv();S&&!S.done?rq():cur=="bm"?bm():S&&res()}
 function sub(){const u=S.qs.length-nf(S.ans);if(confirm(u?`${u} question(s) unanswered. Submit anyway?`:"Submit your answers?"))fin()}
 function fin(){const s=S;if(s.done)return;s.done=true;clearInterval(iv);let sc=0,tot=0,att=0,cor=0;const bw={},bt={};
-s.qs.forEach(q=>{const a=s.ans[q.id],ok=a==q.a,t=typ(q.q);tot+=q.m;if(a!=null)att++;if(ok){cor++;sc+=q.m}
-[[bw,q.w],[bt,t]].forEach(([o,k])=>{const v=o[k]=o[k]||{n:0,att:0,cor:0,mk:0,mt:0};v.n++;v.mt+=q.m;if(a!=null)v.att++;if(ok){v.cor++;v.mk+=q.m}})});
+s.qs.forEach(q=>{const a=s.ans[q.id],ok=a==q.a,t=typ(q.q);tot+=MK(q);if(a!=null)att++;if(ok){cor++;sc+=MK(q)}
+[[bw,q.w],[bt,t]].forEach(([o,k])=>{const v=o[k]=o[k]||{n:0,att:0,cor:0,mk:0,mt:0};v.n++;v.mt+=MK(q);if(a!=null)v.att++;if(ok){v.cor++;v.mk+=MK(q)}})});
 const n=s.qs.length,fl=nf(s.fl);s.res={sc,tot,att,cor,fl,un:n-att,n,bw,bt};
 DB.last={att,fl,un:n-att,n,m:s.m,d:new Date().toLocaleString()};DB.life.att+=att;DB.life.cor+=cor;
 DB.hist.unshift({d:DB.last.d,m:s.m,sc,tot,pct:Math.round(sc/tot*100)});DB.hist=DB.hist.slice(0,15);
@@ -213,7 +214,7 @@ const wrong=s.qs.filter(q=>s.ans[q.id]!=q.a);
 app.innerHTML=`<h2>Results · ${s.m.toUpperCase()}</h2><div class=card><div class=tiles><div><b>${r.sc}/${r.tot}</b>Marks (${p}%)</div><div><b class=ok-t>${r.cor}</b>Correct</div><div><b class=no-t>${r.att-r.cor}</b>Wrong</div><div><b>${r.un}</b>Unanswered</div><div><b>${r.fl}</b>Marked for review</div><div><b>${fm((Date.now()-s.t0)/1000)}</b>Time</div></div></div>
 <div class=card><h3>Performance by week</h3>${tb(r.bw,"Week",(a,b)=>a-b)}<h3>Performance by question type</h3>${tb(r.bt,"Question type",(a,b)=>a<b?-1:1)}</div>
 <div class=card><button class=pr ${wrong.length?"":"disabled"} onclick="launch('study',BYL(${JSON.stringify(wrong.map(q=>q.id))}),{inst:1})">Practise ${wrong.length} missed/unanswered</button><button onclick="go('home')">Home</button></div>
-<div class=card><h3>Answer review</h3>${s.qs.map((q,j)=>{const a=s.ans[q.id];return`<div class=qi><div class=mu>Q${j+1} · Week ${q.w} · ${q.m} mark${q.m>1?"s":""} ${a==null?"· <b>Unanswered</b>":a==q.a?'· <b class=ok-t>✓ Correct</b>':'· <b class=no-t>✗ Wrong</b>'}${s.fl[q.id]?" · ⚑ marked":""}</div><div>${q.q}</div>${a!=null&&a!=q.a?`<div class=no-t>Your answer: ${q.o[a]}</div>`:""}<div class=ok-t>Correct: ${q.o[q.a]}</div><button onclick="bmk('${q.id}')">${DB.bm[q.id]?"★ Bookmarked":"☆ Bookmark"}</button></div>`}).join("")}</div>`}
+<div class=card><h3>Answer review</h3>${s.qs.map((q,j)=>{const a=s.ans[q.id];return`<div class=qi><div class=mu>Q${j+1} · Week ${q.w} · ${MK(q)} mark${MK(q)>1?"s":""} ${a==null?"· <b>Unanswered</b>":a==q.a?'· <b class=ok-t>✓ Correct</b>':'· <b class=no-t>✗ Wrong</b>'}${s.fl[q.id]?" · ⚑ marked":""}</div><div>${q.q}</div>${a!=null&&a!=q.a?`<div class=no-t>Your answer: ${q.o[a]}</div>`:""}<div class=ok-t>Correct: ${q.o[q.a]}</div><button onclick="bmk('${q.id}')">${DB.bm[q.id]?"★ Bookmarked":"☆ Bookmark"}</button></div>`}).join("")}</div>`}
 const BYL=ids=>ids.map(i=>BY[i]);
 function dash(){const l=DB.last,tw=[...Array(13).keys()];
 app.innerHTML=`<h2>📊 Dashboard</h2><div class=card><h4 style="margin-top:0">Last session ${l?`(${l.m}, ${l.d})`:""}</h4>${l?`<div class=tiles><div><b>${l.att}</b>Attempted</div><div><b>${l.fl}</b>Marked for review</div><div><b>${l.un}</b>Unanswered</div><div><b>${l.n}</b>Total questions</div></div>`:`<p class=mu>No sessions yet — start a quiz!</p>`}</div>
